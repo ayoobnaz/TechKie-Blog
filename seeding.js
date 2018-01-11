@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var yelpC = require("./models/campgrounds");
+var yelpC = require("./models/articles");
 var Comment = require("./models/comments")
 
 var data = [{
@@ -11,7 +11,7 @@ var data = [{
 ]
 
 function seedDB(){
-    yelpC.remove({}, function(err){
+    mainDbs.remove({}, function(err){
         if(err){
             console.log(err);
         } else{

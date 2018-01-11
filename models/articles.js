@@ -18,4 +18,4 @@ var campScema = new mongoose.Schema({
    ]
 });
 
-module.exports = mongoose.model('yelp', campScema);
+module.exports = mongoose.model('mainDbs', campScema);

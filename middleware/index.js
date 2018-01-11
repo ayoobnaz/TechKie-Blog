@@ -1,11 +1,11 @@
-var yelpC = require("../models/campgrounds");
+var mainDbs = require("../models/articles");
 var Comment = require("../models/comments");
 
 var middlewareObj = {};
 
 middlewareObj.chkAuth = function(req, res, next){
  if(req.isAuthenticated()){
-        yelpC.findById(req.params.id, function(err, foundCampground){
+        mainDbs.findById(req.params.id, function(err, foundCampground){
            if(err){
                req.flash("error" , "Campground not found");
                res.redirect("back");

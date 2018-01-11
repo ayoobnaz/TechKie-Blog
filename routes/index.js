@@ -6,7 +6,7 @@ var User = require("../models/user");
 
 
 router.get("/" , function(req , res){
-    res.render("yelp");
+    res.render("articles");
 });
 
 router.get("/register", function(req, res) {
@@ -24,7 +24,7 @@ router.post("/register" , function(req, res){
         } else {
             passport.authenticate('local') (req, res, function() {
             req.flash("success" , "Hello " + reg.username );
-            res.redirect('/campgrounds');
+            res.redirect('/articles');
   });
         }
     });
@@ -35,7 +35,7 @@ router.get("/login" , function(req, res) {
 });
 
 router.post("/login" , passport.authenticate('local' ,{
-  successRedirect: '/campgrounds',
+  successRedirect: '/articles',
   failureRedirect: '/login'
 }), function(req, res) {
 });
@@ -43,7 +43,7 @@ router.post("/login" , passport.authenticate('local' ,{
 router.get("/logout" , function(req, res) {
     req.logout();
     req.flash("success", "logged you out");
-    res.redirect("/campgrounds");
+    res.redirect("/articles");
 });
 
 

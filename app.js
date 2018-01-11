@@ -8,13 +8,13 @@ var LocalStrategy = require("passport-local");
 var localMongoose = require("passport-local-mongoose");
 var methodOverride = require("method-override");
 var User = require("./models/user");
-var yelpC = require("./models/campgrounds");
+var mainDbs = require("./models/articles");
 var seedDB = require("./seeding");
 var Comment = require("./models/comments");
 var flash = require('connect-flash');
 
 var commentRT = require("./routes/comments");
-var campgroundsRT = require("./routes/campgrounds");
+var campgroundsRT = require("./routes/articles");
 var indexRT = require("./routes/index");
 
 
