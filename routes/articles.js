@@ -28,8 +28,8 @@ router.post("/articles" , middleware.IsLoggedIn, function(req, res){
         id: req.user._id,
         username: req.user.username
     }
-    var newCampground = {name: name , image:image , descriptions: descriptions, author: author, price:price }
-    mainDbs.create(newCampground , function(err, newCamp){
+    var newArticles = {name: name , image:image , descriptions: descriptions, author: author, price:price }
+    mainDbs.create(newArticles , function(err, newArt){
         if(err){
             console.log(err);
         }else{
@@ -48,21 +48,21 @@ router.get("/articles/:id" , function(req, res){
       if(err){
           console.log(err);
       } else{
-              res.render("show", {campground: desArt});
+              res.render("show", {article: desArt});
       } 
     });
 });
 
 router.get("/articles/:id/edit", middleware.chkAuth, function(req, res){
     mainDbs.findById(req.params.id, function(err, foundArticles){
-        res.render("articles/edit", {campground: foundArticles});
+        res.render("articles/edit", {article: foundArticles});
     });
 });
 
 
 router.put("/articles/:id", middleware.chkAuth, function(req, res){
     // find and update the correct campground
-    mainDbs.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedArticles){
+    mainDbs.findByIdAndUpdate(req.params.id, req.body.article, function(err, updatedArticles){
        if(err){
            res.redirect("/articles");
        } else {

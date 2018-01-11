@@ -12,13 +12,13 @@ router.get("/articles/:id/comments/new" ,middleware.IsLoggedIn, function(req, re
         if(err){
             console.log(err);
         } else {
-            res.render("comNew" , {campground: foundCom});
+            res.render("comNew" , {article: foundCom});
         }
     });
 });
 
 router.post("/articles/:id/comments" , middleware.IsLoggedIn, function(req, res){
-    mainDbs.findById(req.params.id , function(err, campground) {
+    mainDbs.findById(req.params.id , function(err, article) {
         if(err){
             console.log("err");
             res.redirect("/articles");
@@ -31,10 +31,10 @@ router.post("/articles/:id/comments" , middleware.IsLoggedIn, function(req, res)
                comment.author.id = req.user._id;
                comment.author.username = req.user.username;
                comment.save();
-               campground.comments.push(comment);
-               campground.save();
+               article.comments.push(comment);
+               article.save();
                req.flash("success" , "Successfully added coment");
-               res.redirect('/articles/' + campground._id);
+               res.redirect('/articles/' + article._id);
               }
             });
         }
@@ -47,7 +47,7 @@ router.get("/articles/:id/comments/:comment_id/edit", middleware.chkComAuth, fun
       if(err){
           res.redirect("back");
       } else {
-        res.render("articles/editCom", {campground_id: req.params.id, comment: foundComment});
+        res.render("articles/editCom", {article_id: req.params.id, comment: foundComment});
       }
   });
 });
