@@ -8,11 +8,11 @@ var Comment = require("../models/comments");
 
 
 router.get("/articles" , function(req, res){
-    mainDbs.find({} , function(err , allcamp){
+    mainDbs.find({} , function(err , allArt){
         if(err){
             console.log(err);
         }else{
-            res.render("articles" , {campgrounds : allcamp});
+            res.render("articles" , {articles : allArt});
         }
     });
         
@@ -44,25 +44,25 @@ router.get("/articles/new" , middleware.IsLoggedIn, function(req, res) {
 });
 
 router.get("/articles/:id" , function(req, res){
-    mainDbs.findById(req.params.id).populate("comments").exec(function(err , desCamp){
+    mainDbs.findById(req.params.id).populate("comments").exec(function(err , desArt){
       if(err){
           console.log(err);
       } else{
-              res.render("show", {campground: desCamp});
+              res.render("show", {campground: desArt});
       } 
     });
 });
 
 router.get("/articles/:id/edit", middleware.chkAuth, function(req, res){
-    mainDbs.findById(req.params.id, function(err, foundCampground){
-        res.render("articles/edit", {campground: foundCampground});
+    mainDbs.findById(req.params.id, function(err, foundArticles){
+        res.render("articles/edit", {campground: foundArticles});
     });
 });
 
 
 router.put("/articles/:id", middleware.chkAuth, function(req, res){
     // find and update the correct campground
-    mainDbs.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
+    mainDbs.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedArticles){
        if(err){
            res.redirect("/articles");
        } else {

@@ -5,13 +5,12 @@ var middlewareObj = {};
 
 middlewareObj.chkAuth = function(req, res, next){
  if(req.isAuthenticated()){
-        mainDbs.findById(req.params.id, function(err, foundCampground){
+        mainDbs.findById(req.params.id, function(err, foundArticle){
            if(err){
-               req.flash("error" , "Campground not found");
+               req.flash("error" , "Article not found");
                res.redirect("back");
            }  else {
-               // does user own the campground?
-            if(foundCampground.author.id.equals(req.user._id)) {
+            if(foundArticle.author.id.equals(req.user._id)) {
                 next();
             } else {
                 res.redirect("back");
@@ -30,7 +29,6 @@ middlewareObj.chkComAuth = function(req, res, next){
            if(err){
                res.redirect("back");
            }  else {
-               // does user own the campground?
             if(foundComment.author.id.equals(req.user._id)) {
                 next();
             } else {

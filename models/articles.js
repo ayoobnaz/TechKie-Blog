@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 
-var campScema = new mongoose.Schema({
+var ArticleScema = new mongoose.Schema({
     name: String, price: String, image: String, descriptions: String,
     author: {
          id: {
@@ -18,4 +18,4 @@ var campScema = new mongoose.Schema({
    ]
 });
 
-module.exports = mongoose.model('mainDbs', campScema);
+module.exports = mongoose.model('mainDbs', ArticleScema);
