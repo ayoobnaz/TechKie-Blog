@@ -1,38 +1,39 @@
     
 <% include partials/header %>
 
-
-<div class="container"> 
-    <header class="jumbotron">
+<div class="container">
+        <header class="jumbotron">
         <div class="container">
-            <h1>Welcome to Tech Magazine</h1>
-            <p><a class="btn btn-primary btn-lg" href="/articles/new">Add New Articles</a></p>
+            <h1>campgrounds</h1>
+            <p><a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campgrounds</a></p>
                 </div>
     </header>
-
-    
-    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
-           <% articles.forEach(function(article){ %>
-        <div class="col-md-3">
-            <div class=thumbnail>
-            <img src="<%= article.image %>">
-            <div class="caption">
-            <h4><%= article.name %></h4>
-            </div>
-            <a  class="btn btn-primary" href="/articles/<%= article.id %>">More Info</a>
-            </div>
-
-
-        </div>
-
-        <% }) %>           
-
-               
-    </div>
-
 </div>
-    
-        <% include partials/footer %>  
-    
 
-    
+
+<div class="container">
+     <% articles.forEach(function(article){ %>
+
+		 <div class="content-grids">
+			 <div class="col-md-8 content-main">
+				 <div class="content-grid">					 
+					 <div class="content-grid-info">
+                        <img src="<%= article.image %>">
+						 <div class="post-info">
+						 <h4><a href="single.html"><%= article.name %></h4></a>  July 30, 2014 / 27 Comments</h4>
+						 <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis.</p>
+						 <a href="/articles/<%= article.id %>"><span></span>READ MORE</a>
+						 <!--            <a  class="btn btn-primary" href="/articles/<%= article.id %>">More Info</a>-->
+
+						 </div>
+					 </div>
+
+				 </div>
+			  </div>
+
+		  </div>
+		   <% }) %>       
+
+	  </div>
+
+<% include partials/footer %>  

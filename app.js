@@ -9,16 +9,14 @@ var localMongoose = require("passport-local-mongoose");
 var methodOverride = require("method-override");
 var User = require("./models/user");
 var mainDbs = require("./models/articles");
-var seedDB = require("./seeding");
 var Comment = require("./models/comments");
 var flash = require('connect-flash');
 
 var commentRT = require("./routes/comments");
-var campgroundsRT = require("./routes/articles");
+var articleRT = require("./routes/articles");
 var indexRT = require("./routes/index");
 
 
-// seedDB();
 
 mongoose.connect('mongodb://localhost/dtBs', { useMongoClient: true });
 mongoose.Promise = global.Promise;
@@ -55,7 +53,7 @@ app.use(function(req, res, next){
 
 app.use(commentRT);
 app.use(indexRT);
-app.use(campgroundsRT);
+app.use(articleRT);
 
 
 app.listen(process.env.PORT , process.env.IP , function(){

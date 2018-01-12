@@ -2,7 +2,6 @@ var express = require("express");
 var router = express.Router();
 
 var mainDbs = require("../models/articles");
-var seedDB = require("../seeding");
 var Comment = require("../models/comments");
 var middleware = require("../middleware");
 
