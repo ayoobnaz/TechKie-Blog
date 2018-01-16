@@ -1,15 +1,23 @@
-.thumbnail img {
-    width: 100%;
-}
 
-.thumbnail {
-    padding: 0;
-}
-
-.thumbnail .caption-full {
-    padding: 9px;
-}
 
 .delete-form{
     display: inline;
 }
+
+ 
+.coment_box[type="text"]
+{
+    width:800px;
+    height:400px;
+
+}
+
+.nee{
+    position: reletive;
+    margin: auto 100px auto 170px;
+}
+
+.edBtn{
+        margin: auto 100px auto 170px;
+}
+

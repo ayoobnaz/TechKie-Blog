@@ -12,6 +12,10 @@
 				<div class="banner-text">
 					<h2>Welcome To</h2>
 					<h1>Techkie Magazine</h1>
+					<div class="banner-btn">
+						<a href="/articles/new">Create A New Article</a>
+					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -25,9 +29,9 @@
 
 						<div class="a-1">
 							<div class="col-md-6 abt-left">
-								<a href="single.html"><img src="<%= article.image %>" alt="" /></a>
+								<img src="<%= article.image %>" alt="" />
 								<h6>Find The Most</h6>
-								<h3><a href="single.html"><%= article.name %></a></h3>
+								<h3><%= article.name %></h3>
 								<p><%= article.descriptions %></p>
 								<div class="about-btn">
 									<a href="/articles/<%= article.id %>">Read More</a>

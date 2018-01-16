@@ -34,21 +34,13 @@ body a{
 p{
 	margin:0;
 }
-ul,label{
-	margin:0;
-	padding:0;
-}
-body a:hover{
-	text-decoration:none;
-}
-/*--Header-top-Starts--*/
-.head-main{
-	text-align:center;
-}
+
+
 .header-top{
 	padding:2em 0px;
 }
 /*--Header-top-end--*/
+
 /*--Header-Starts--*/
 .navigation {
 	float: left;
@@ -140,11 +132,7 @@ ul.navig li a {
 ul.navig li a:hover{
 	color:#fff;
 }
-span.menu {
-	display: block;
-	float: right;
-	margin: 0px 0px 0 0;
-}
+
 ul.navig {
     margin: 0;
     z-index: 999;
@@ -162,82 +150,12 @@ ul.navig {
 }
 }
 ul.navig li a.active{
-	color:#999;
+	float: left;
 }
-.search-bar {
-    width: 120%;
-    float: right;
-}
-.search-bar input[type="text"] {
-    width: 100%;
-    padding: 8px 45px 8px 8px;
-    border: none;
-    background: none;
-    outline: none;
-    -webkit-appearance: none;
-    color: rgba(0, 0, 0, 0.74);
-    font-size: 0.875em;
-    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
-    font-family: 'Raleway-Regular';
-}
-.search-bar input[type="submit"] {
-    background: url(../images/search.png)no-repeat 0px 0px;
-    outline: none;
-    -webkit-appearance: none;
-    border: 0;
-    display: inline-block;
-    vertical-align: -webkit-baseline-middle;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    top: 7px;
-    right: 1%;
-}
-.header-right ul {
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 11px;
-    right: 23%;
-}
-.header-right ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 3px;
-}
-.header-right ul li a span {
-    background: url(../images/social.png) no-repeat;
-    width: 16px;
-    height: 16px;
-    display: block;
-}
-.header-right ul li a span:hover,.about-two ul li a span:hover{
-    transform: rotatey(360deg);
-    -webkit-transform: rotatey(360deg);
-    -moz-transform: rotatey(360deg);
-    -o-transform: rotatey(360deg);
-    -ms-transform: rotatey(360deg);
-    transition: 0.5s all ease;
-    -webkit-transition: 0.5s all ease;
-    -moz-transition: 0.5s all ease;
-    -o-transition: 0.5s all ease;
-    -ms-transition: 0.5s all ease;
-}
-.header-right ul li a span.fb{
-	background-position:0px 0px;
-}
-.header-right ul li a span.twit{
-	background-position:-16px 0px;
-}
-.header-right ul li a span.pin{
-	background-position:-32px 0px;
-}
-.header-right ul li a span.rss{
-	background-position:-48px 0px;
-}
-.header-right ul li a span.drbl{
-	background-position:-64px 0px;
-}
+
+
+
+
 /*--Header-Ends--*/
 /*--banner-starts--*/
 .banner-top{
@@ -1275,9 +1193,7 @@ h4.media-heading {
     right: 5px;
     background-size: 100%;
 }
-ul.navig li a {
-    padding: 10px 0;
-}
+
 .banner-text h2 {
     font-size: 13px;
     width: 35%;

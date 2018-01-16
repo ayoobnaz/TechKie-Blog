@@ -21,23 +21,24 @@
 <body>
 
 	<div class="header">
+	    
+	    
 		<div class="container-fluid">
 			<div class="head">
 			<div class="navigation">
-				 <span class="menu"></span> 
-					<ul class="navig">
-						<li><a href="/articles"  class="active">Home</a></li>
-					</ul>
+				<ul class="navig">
+				        <li><a href="/articles"  class="active">Home</a></li>
+        				<% if (!currUser){ %>
+                        <li class="pull-right"><a href="/login">Login</a></li>
+                        <li class="pull-right"><a href="/register">SignUp</a></li>
+                        <% } else { %>
+                        <li class="pull-right"><a href="#">Signed in as <%= currUser.username %></a></li>
+                        <li class="pull-right"><a href="/logout">Logout</a></li>
+                        <% } %> 
+
+				</ul>
 			</div>
-			<ul class="nav navbar-nav navbar-right navig">
-                <% if (!currUser){ %>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">SignUp</a></li>
-                <% } else { %>
-                <li><a href="#">Signed in as <%= currUser.username %></a></li>
-                <li><a href="/logout">Logout</a></li>
-                <% } %>
-            </ul>
+
 			</div>
 			</div>
 		</div>	    
