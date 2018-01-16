@@ -28,7 +28,7 @@ router.post("/articles" , middleware.IsLoggedIn, function(req, res){
         id: req.user._id,
         username: req.user.username
     }
-    var newArticles = {name: name , image:image , descriptions: descriptions, author: author, price:price }
+    var newArticles = {name: name , image:image , descriptions: descriptions, author: author}
     mainDbs.create(newArticles , function(err, newArt){
         if(err){
             console.log(err);

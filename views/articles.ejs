@@ -2,90 +2,24 @@
 <% include partials/header %>
 
 
-
-	<!--header-top-starts-->
-	<div class="header-top">
-		<div class="container">
-			<div class="head-main">
-				<a href="index.html"><img src="images/logo-1.png" alt="" /></a>
-			</div>
-		</div>
-	</div>
-	<!--header-top-end-->
 	<!--start-header-->
-	<div class="header">
-		<div class="container">
-			<div class="head">
-			<div class="navigation">
-				 <span class="menu"></span> 
-					<ul class="navig">
-						<li><a href="index.html"  class="active">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="gallery.html">Gallery</a></li>
-						<li><a href="typo.html">Typo</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-			</div>
-			<div class="header-right">
-				<div class="search-bar">
-					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-					<input type="submit" value="">
-				</div>
-				<ul>
-					<li><a href="#"><span class="fb"> </span></a></li>
-					<li><a href="#"><span class="twit"> </span></a></li>
-					<li><a href="#"><span class="pin"> </span></a></li>
-					<li><a href="#"><span class="rss"> </span></a></li>
-					<li><a href="#"><span class="drbl"> </span></a></li>
-				</ul>
-			</div>
-				<div class="clearfix"></div>
-			</div>
-			</div>
-		</div>	
-	<!-- script-for-menu -->
-	<!-- script-for-menu -->
-		<script>
-			$("span.menu").click(function(){
-				$(" ul.navig").slideToggle("slow" , function(){
-				});
-			});
-		</script>
-	<!-- script-for-menu -->
+
+
 	<!--banner-starts-->
 	<div class="banner">
 		<div class="container">
 			<div class="banner-top">
 				<div class="banner-text">
-					<h2>Aliquam erat</h2>
-					<h1>Suspendisse potenti</h1>
-					<div class="banner-btn">
-						<a href="single.html">Read More</a>
-					</div>
+					<h2>Welcome To</h2>
+					<h1>Techkie Magazine</h1>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--banner-end-->
-	<!--about-starts-->
+	
 	<div class="about">
 		<div class="container">
-			<div class="about-main">
 				<div class="col-md-8 about-left">
-					<div class="about-one">
-						<p>Find The Most</p>
-						<h3>Coffee of the month</h3>
-					</div>
-					<div class="about-two">
-						<a href="single.html"><img src="https://images.unsplash.com/photo-1465711403138-162e171bb7e4?dpr=1&auto=format&fit=crop&w=376&h=251&q=60&cs=tinysrgb" alt="" /></a>
-						<p>Posted by <a href="#">Johnson</a> on 10 feb, 2015 <a href="#">comments(2)</a></p>
-						<p>Phasellus fringilla enim nibh, ac pharetra nulla vestibulum ac. Donec tempor fermentum felis, non placerat sem ultrices ut. Nam molestie nunc nec felis hendrerit, in pulvinar arcu mollis. Quisque eget purus nec velit venenatis tincidunt vitae ac massa. Proin vel ornare tellus. Duis consectetur gravida tellus ut varius. Aenean tellus massa, laoreet ut euismod et, pretium id ex. Mauris hendrerit suscipit hendrerit.</p>
-						<p>Quisque ultrices ligula a nisl porttitor, vitae porta tortor eleifend. Nulla nec imperdiet ipsum, ut cursus mauris. Proin ut sodales sem, quis vestibulum libero. Proin tempor venenatis congue. Phasellus mollis massa sit amet pharetra consequat. Aliquam quis lacus at sapien tempor semper. Sed ultrices et metus et elementum. Nunc sed justo at erat consequat mollis et eu lectus.</p>
-						<div class="about-btn">
-							<a href="single.html">Read More</a>
-						</div>
-
-					</div>	
 					<div class="about-tre">
 					           <% articles.forEach(function(article){ %>
 
@@ -94,10 +28,12 @@
 								<a href="single.html"><img src="<%= article.image %>" alt="" /></a>
 								<h6>Find The Most</h6>
 								<h3><a href="single.html"><%= article.name %></a></h3>
-								<p>Vivamus interdum diam diam, non faucibus tortor consequat vitae. Proin sit amet augue sed massa pellentesque viverra. Suspendisse iaculis purus eget est pretium aliquam ut sed diam.</p>
-								<a href="/articles/<%= article.id %>">Read More</a>
+								<p><%= article.descriptions %></p>
+								<div class="about-btn">
+									<a href="/articles/<%= article.id %>">Read More</a>
+								</div>
 
-								<label>May 29, 2015</label>
+								<label><%= article.dateN.toDateString() %></label>
 							</div>
 		
 						</div>
@@ -105,24 +41,8 @@
 					</div>	
 				</div>
 
-			</div>		
 		</div>
 	</div>
-	
-	<!--slide-end-->
-	<!--footer-starts-->
-	<div class="footer">
-		<div class="container">
-			<div class="footer-text">
-				<p>Ayoob Nazeer</p>
-			</div>
-		</div>
-	</div>
-	<!--footer-end-->
-
-
-
-
 
 
 <% include partials/footer %>  

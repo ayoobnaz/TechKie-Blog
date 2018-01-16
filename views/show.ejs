@@ -1,57 +1,44 @@
 <% include partials/header %>
 
 
+	<div class="about">
+		<div class="container">
+			<div class="about-main">
+				<div class="col-md-8 about-left">
+					<div class="about-one">
+						<h3><%= article.name %></h3>
+					</div>
+					<div class="about-two">
+						<img src="<%= article.image %>" alt="" />
+						<p>Posted by <a href="#"><%= article.author.username %></a> On 10 feb, 2015</p>
+						<p><%= article.descriptions %></p><br/>
+						    <% if(currUser && article.author.id.equals(currUser._id)){ %>
+						    <a class="editBtn" href="/articles/<%= article._id %>/edit">Edit</a><br/>
 
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <p class="lead">Yelp Camp</p>
-            <div class="list-group">
-                <li class="list-group-item active">Item 1</li>
-                <li class="list-group-item">Item 2</li>
-                <li class="list-group-item">Item 3</li>
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="thumbnail">
-                <img class="img-responsive" src="<%= article.image %>">
-                <div class="caption-full">
-                    <h4 class="pull-right"><%= article.price %></h4>
-                    <h4><a><%= article.name %></a></h4>
-                    <p><%= article.descriptions %></p>
-                    <p>
-                        <em>Submitted By <%= article.author.username %></em>
-                    </p>
-                <% if(currUser && article.author.id.equals(currUser._id)){ %>
-                    <a class="btn btn-xs btn-warning" href="/articles/<%= article._id %>/edit">Edit</a>
-                <form class="delete-form" action="/articles/<%= article._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-xs btn-danger">Delete</button>
-                </form>
-                <% }%>
-                </div>
-            </div>
-            <div class="well">
-                <div class="right">
-                    <a class="btn btn-success" href="/articles/<%= article._id %>/comments/new">Add New Comments</a>
-                </div>
-                <hr>
+							<form class="delete-form" action="/articles/<%= article._id %>?_method=DELETE" method="POST">
+							    <button class="editBtn">Delete</button>
+                            </form>
+                             <% }%>
+                             
+                             
+                <div class="well">
+                    <a class="editBtn" style="float:right;" href="/articles/<%= article._id %>/comments/new">Add New Comments</a>
+                <hr />
                 <% article.comments.forEach(function(comment){ %>
                 <div class="row">
                     <div class="col-md-12">
-                        <strong><%= comment.author.username %></strong>
-                        <span class="pull-right"><%= comment.created.toDateString() %></span>
+                        <h4 class="media-heading"><%= comment.author.username %></h4>
+                        <span class=" pull-right"><i class="glyphicon glyphicon-time"></i><%= dateN.created.toDateString() %></span>
                         <p>
                          <%= comment.text %>
                         </p> 
                         <% if(currUser && comment.author.id.equals(currUser._id)){ %>
-                        <a class="btn btn-xs btn-warning" href="/articles/<%=article._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                        <a class="comEdit" href="/articles/<%=article._id %>/comments/<%=comment._id %>/edit">Edit</a>
                             <form class="delete-form" action="/articles/<%=article._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
-                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                <input type="submit" class="comEdit" value="Delete">
                         </form>
-                        <% } %>
+                        <% } %> <hr />
+
                     </div>
                     
                 </div>
@@ -59,18 +46,16 @@
                 <% }) %>
                 
             </div>
-        </div>
-    </div>
-    
+                             
+                             
+                    </div>
+             </div>
+        	</div>	
+	
+		</div>
 
+    </div>	
 
-
-<p>
-</p>
-
-
-
-</div>
 
 
 <% include partials/footer %>  
