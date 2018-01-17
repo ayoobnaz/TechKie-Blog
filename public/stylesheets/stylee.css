@@ -471,14 +471,14 @@ ul.navig li a.active{
 	background: #190608;
 	padding: 9px 0px;
 	border: 1px solid #190608;
-	font-size: 15px;
+	font-size: 35px;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 	-ms-border-radius: 5px;
 	width: 65%;
-	margin: 0 auto;
+	margin-top:10px;
 }
 .about-right {
 	text-align:center;
@@ -935,9 +935,9 @@ ul.blog-ic {
     margin-top: 10px;
 }	
 .comments h3,.comment-bottom h3{
-	width: 17%;
+	width: 70%;
     text-align: center;
-	margin: 0;
+	margin-top: 10%;
 }
 /*--single--*/
 /*--media-quaries-starts-here--*/
@@ -1042,10 +1042,11 @@ ul.navig {
 .about-one p {
     width: 17%;
 }
-.heading h3,h3.ghj{
+.heading h3{
     padding: 9px 0px;
-    font-size: 14px;
+    font-size: 25px;
 }
+
 .abt-one p {
     width: 90%;
 }

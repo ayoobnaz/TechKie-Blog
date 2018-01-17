@@ -4,15 +4,18 @@
 
 <div class="container">
     <div class="row">
-        <h1 style="text-align:center">Create A New Template</h1>
-        <div style="width: 30%; margin: 0 auto;">
-            <form action="/articles" method="POST">
-            <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
-            <div class="form-group"><input class="form-control" type="text" name="image" placeholder="Image"></div>
-            <div class="form-group"><input class="form-control" type="text" name="descriptions" placeholder="descriptions"></div>
-            <div class="form-group"><button class="btn btn-lg btn-default btn-block btn-primary" type="submit">Submit</button></div>
+        <div class="comment-bottom heading">
+                    <h3>Create A New Template</h3>
+
+            <form action="/articles" method="POST" id="newForm">
+
+						<input type="text" value="Name" name="name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+						<input type="text" value="image Url" name="image" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='image Url';}">
+						<textarea cols="77" rows="6" value=" "  name="descriptions" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'descriptions';}">Message</textarea>
+                        <button class="btn btn-lg btn-default btn-block btn-primary" type="submit">Submit</button>
             </form>
-                <a href="/articles">Go Back</a>
+
+        <a href="/articles">Go Back</a>
 
         </div>
 
