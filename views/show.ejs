@@ -2,7 +2,7 @@
 
 
 	<div class="about">
-		<div class="container">
+		<div class="container showContainer">
 			<div class="about-main">
 				<div class="col-md-8 about-left">
 					<div class="about-one">
@@ -10,15 +10,20 @@
 					</div>
 					<div class="about-two">
 						<img src="<%= article.image %>" alt="" />
-						<p>Posted by <a href="#"><%= article.author.username %></a> On 10 feb, 2015</p>
+						<p>Posted by <a href="#"><%= article.author.username %></a> On <%= article.dateN.toDateString() %></p>
 						<p><%= article.descriptions %></p><br/>
 						    <% if(currUser && article.author.id.equals(currUser._id)){ %>
-						    <a class="editBtn" href="/articles/<%= article._id %>/edit">Edit</a><br/>
+						    						<div class="comentBrdr">
+
+						    <p>Modify Your Post:</p>
+
+						     <button class="editBtn"><a id="editcolor" href="/articles/<%= article._id %>/edit">Edit</a></button>
 
 							<form class="delete-form" action="/articles/<%= article._id %>?_method=DELETE" method="POST">
 							    <button class="editBtn">Delete</button>
                             </form>
                              <% }%>
+                        </div>
                              
                              
                 <div class="well">

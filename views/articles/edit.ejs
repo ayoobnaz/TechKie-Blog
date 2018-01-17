@@ -1,10 +1,10 @@
 <% include ../partials/header %>
 
 
-<div class="container">
+<div class="container newContainer">
     <div class="row">
         <div class="comment-bottom heading">
-                            <h3>Edit <%= article.name %></h3>
+                            <h3>Edit</h3>
 
             <form action="/articles/<%= article._id %>?_method=PUT" method="POST" id="newForm" name="confirmationForm">
 
@@ -13,9 +13,6 @@
 						<textarea cols="77" rows="6" name="article[descriptions]"><%= article.descriptions %></textarea>
                         <button class="btn btn-lg btn-default btn-block btn-primary" type="submit">Submit</button>
             </form>
-
-
-        <a href="/articles">Go Back</a>
 
         </div>
 

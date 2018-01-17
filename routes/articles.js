@@ -19,6 +19,7 @@ router.get("/articles" , function(req, res){
     
 });
 
+
 router.post("/articles" , middleware.IsLoggedIn, function(req, res){
     var name = req.body.name;
     var image = req.body.image;
@@ -38,6 +39,8 @@ router.post("/articles" , middleware.IsLoggedIn, function(req, res){
         }
     });
 });
+
+
 
 router.get("/articles/new" , middleware.IsLoggedIn, function(req, res) {
     res.render("new.ejs");

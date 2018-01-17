@@ -2,20 +2,19 @@
 
 
 
-<div class="container">
+<div class="container newContainer">
     <div class="row">
         <div class="comment-bottom heading">
-                    <h3>Create A New Template</h3>
+                    <h3 id="crNew">Create A New Template</h3>
 
             <form action="/articles" method="POST" id="newForm">
 
-						<input type="text" value="Name" name="name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
-						<input type="text" value="image Url" name="image" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='image Url';}">
-						<textarea cols="77" rows="6" value=" "  name="descriptions" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'descriptions';}">Message</textarea>
+						<input type="text" value="Name" name="name" placeholder="Title">
+						<input type="text" value="image Url" name="image" placeholder="image">
+						<textarea cols="77" rows="6" value=" "  name="descriptions" placeholder="descriptions">Message</textarea>
                         <button class="btn btn-lg btn-default btn-block btn-primary" type="submit">Submit</button>
             </form>
 
-        <a href="/articles">Go Back</a>
 
         </div>
 

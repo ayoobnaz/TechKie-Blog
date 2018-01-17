@@ -11,7 +11,7 @@
 			<div class="banner-top">
 				<div class="banner-text">
 					<h2>Welcome To</h2>
-					<h1>Techkie Magazine</h1>
+					<h1>TechKie Magazine</h1>
 					<div class="banner-btn">
 						<a href="/articles/new">Create A New Article</a>
 					</div>
@@ -20,33 +20,33 @@
 			</div>
 		</div>
 	</div>
-	
-	<div class="about">
-		<div class="container">
-				<div class="col-md-8 about-left">
-					<div class="about-tre">
-					           <% articles.forEach(function(article){ %>
 
-						<div class="a-1">
-							<div class="col-md-6 abt-left">
-								<img src="<%= article.image %>" alt="" />
-								<h6>Find The Most</h6>
+	<div class="container">
+	<div class="about-tre">
+	<div class="a-1">
+							           <% articles.forEach(function(article){ %>
+
+							<div class="col-md-6 abt-left" id="abt-left">
 								<h3><%= article.name %></h3>
-								<p><%= article.descriptions %></p>
+								<img src="<%= article.image %>">
+								<p style="width: 70ch; overflow: hidden; white-space: nowrap;"><%= article.descriptions %></p>
 								<div class="about-btn">
+									<label><%= article.dateN.toDateString() %></label>
 									<a href="/articles/<%= article.id %>">Read More</a>
 								</div>
-
-								<label><%= article.dateN.toDateString() %></label>
 							</div>
-		
-						</div>
-	<% }) %> 
-					</div>	
-				</div>
+							
+				<% }) %> 
 
-		</div>
 	</div>
+
+	</div>
+	</div>
+		
+
+					
+							
+							
 
 
 <% include partials/footer %>  

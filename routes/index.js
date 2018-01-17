@@ -2,11 +2,21 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 
+var mainDbs = require("../models/articles");
 var User = require("../models/user");
 
 
-router.get("/" , function(req , res){
-    res.render("articles");
+
+router.get("/" , function(req, res){
+    mainDbs.find({} , function(err , allArt){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("articles" , {articles : allArt});
+        }
+    });
+        
+    
 });
 
 router.get("/register", function(req, res) {
