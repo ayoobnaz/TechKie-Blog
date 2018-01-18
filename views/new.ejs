@@ -9,16 +9,32 @@
 
             <form action="/articles" method="POST" id="newForm" enctype="multipart/form-data">
 
-						<input type="text" name="article[name]" placeholder="Title">
-                    <input type="file" id="image" name="image" accept="image/*" required>
-						<textarea cols="77" rows="6" value=" "  name="article[descriptions]" placeholder="descriptions">Message</textarea>
-                        <button class="btn btn-lg btn-default btn-block btn-primary" type="submit">Submit</button>
+						<input type="text" name="article[name]" placeholder="Title" required>
+                    <!--<input type="file" id="image" name="image" accept="image/*" required>-->
+						<textarea cols="77" rows="6" value=" "  name="article[descriptions]" placeholder="descriptions" required></textarea>
+						
+						
+					<div class="fileUpload">
+                        <span class="custom-span">+</span>
+                        <p class="custom-para">Add An Image</p>
+                        <input id="uploadBtn" name="image" type="file" class="upload" accept="image/*" required/>
+                    </div>
+                        <input id="uploadFile" placeholder="No Images Uploded" disabled="disabled" />
+
+                    <script type="text/javascript">
+                    document.getElementById("uploadBtn").onchange = function(){
+                    document.getElementById("uploadFile").value = this.value;
+                    };
+                    </script>
+						
+						
+                    <button class="btn btn-lg btn-default btn-block btn-primary" type="submit">Submit</button>
             </form>
 
 
         </div>
 
-</div>
+    </div>
 </div>
 
 
