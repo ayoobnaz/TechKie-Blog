@@ -53,7 +53,6 @@ router.post("/articles" , middleware.IsLoggedIn, upload.single('image'), functio
   cloudinary.uploader.upload(req.file.path, function(result) {
   // add cloudinary url for the image to the campground object under image property
   req.body.article.image = result.secure_url;
-  // add author to campground
   req.body.article.author = {
     id: req.user._id,
     username: req.user.username
