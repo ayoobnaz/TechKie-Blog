@@ -6,6 +6,9 @@ var mainDbs = require("../models/articles");
 var User = require("../models/user");
 
 
+router.get("/", function(req, res){
+    res.render("yelp");
+});
 
 router.get("/" , function(req, res){
     mainDbs.find({} , function(err , allArt){
