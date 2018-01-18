@@ -1,3 +1,6 @@
+require('dotenv').config()
+
+
 var express = require("express");
 var app = express();
 var parser = require("body-parser");
@@ -11,13 +14,16 @@ var User = require("./models/user");
 var mainDbs = require("./models/articles");
 var Comment = require("./models/comments");
 var flash = require('connect-flash');
+var multer = require('multer');
+var dotenv = require('dotenv')
+
 
 var commentRT = require("./routes/comments");
 var articleRT = require("./routes/articles");
 var indexRT = require("./routes/index");
 
 
-
+require('dotenv/config');
 mongoose.connect('mongodb://localhost/dtBs', { useMongoClient: true });
 mongoose.Promise = global.Promise;
 

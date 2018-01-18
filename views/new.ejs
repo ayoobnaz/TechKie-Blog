@@ -7,11 +7,11 @@
         <div class="comment-bottom heading">
                     <h3 id="crNew">Create A New Template</h3>
 
-            <form action="/articles" method="POST" id="newForm">
+            <form action="/articles" method="POST" id="newForm" enctype="multipart/form-data">
 
-						<input type="text" name="name" placeholder="Title">
-						<input type="text" name="image" placeholder="image">
-						<textarea cols="77" rows="6" value=" "  name="descriptions" placeholder="descriptions">Message</textarea>
+						<input type="text" name="article[name]" placeholder="Title">
+                    <input type="file" id="image" name="image" accept="image/*" required>
+						<textarea cols="77" rows="6" value=" "  name="article[descriptions]" placeholder="descriptions">Message</textarea>
                         <button class="btn btn-lg btn-default btn-block btn-primary" type="submit">Submit</button>
             </form>
 

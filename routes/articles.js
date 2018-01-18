@@ -1,10 +1,37 @@
 var express = require("express");
 var router = express.Router();
 var middleware = require("../middleware");
+var dotenv = require('dotenv')
 
 
 var mainDbs = require("../models/articles");
 var Comment = require("../models/comments");
+var request = require("request");
+var multer = require('multer');
+
+
+var storage = multer.diskStorage({
+  filename: function(req, file, callback) {
+    callback(null, Date.now() + file.originalname);
+  }
+});
+
+var imageFilter = function (req, file, cb) {
+    // accept image files only
+    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+        return cb(new Error('Only image files are allowed!'), false);
+    }
+    cb(null, true);
+};
+var upload = multer({ storage: storage, fileFilter: imageFilter})
+
+var cloudinary = require('cloudinary');
+cloudinary.config({ 
+  cloud_name: process.env.DB_HOST ,
+  api_key: process.env.DB_USER ,
+  api_secret: process.env.DB_PASS
+});
+
 
 
 router.get("/articles" , function(req, res){
@@ -20,24 +47,25 @@ router.get("/articles" , function(req, res){
 });
 
 
-router.post("/articles" , middleware.IsLoggedIn, function(req, res){
-    var name = req.body.name;
-    var image = req.body.image;
-    var descriptions = req.body.descriptions;
-    var price = req.body.price;
-    var author = {
-        id: req.user._id,
-        username: req.user.username
-    }
-    var newArticles = {name: name , image:image , descriptions: descriptions, author: author}
-    mainDbs.create(newArticles , function(err, newArt){
-        if(err){
-            console.log(err);
-        }else{
 
-                res.redirect("/articles");
-        }
-    });
+router.post("/articles" , middleware.IsLoggedIn, upload.single('image'), function(req, res){
+
+  cloudinary.uploader.upload(req.file.path, function(result) {
+  // add cloudinary url for the image to the campground object under image property
+  req.body.article.image = result.secure_url;
+  // add author to campground
+  req.body.article.author = {
+    id: req.user._id,
+    username: req.user.username
+  }
+  mainDbs.create(req.body.article, function(err, article) {
+    if (err) {
+      req.flash('error', err.message);
+      return res.redirect('back');
+    }
+    res.redirect('/articles/' + article.id);
+  });
+});
 });
 
 

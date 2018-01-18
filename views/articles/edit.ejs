@@ -8,9 +8,9 @@
 
             <form action="/articles/<%= article._id %>?_method=PUT" method="POST" id="newForm" name="confirmationForm">
 
-						<input type="text" value="<%= article.name %>" name="article[name]">
-						<input type="text" value="<%= article.image %>" name="article[image]">
-						<textarea cols="77" rows="6" name="article[descriptions]"><%= article.descriptions %></textarea>
+						<input type="text" value="<%= article.name %>" name="name">
+						<input type="text" value="<%= article.image %>" name="image">
+						<textarea cols="77" rows="6" name="descriptions"><%= article.descriptions %></textarea>
                         <button class="btn btn-lg btn-default btn-block btn-primary" type="submit">Submit</button>
             </form>
 
