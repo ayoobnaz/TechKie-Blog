@@ -24,7 +24,7 @@ var indexRT = require("./routes/index");
 
 
 require('dotenv/config');
-mongoose.connect('mongodb://arData:thahani@ds031591.mlab.com:31591/ayoobnaz');
+mongoose.connect('mongodb://arData:thahani@ds031591.mlab.com:31591/ayoobnaz', { useMongoClient: true });
 mongoose.Promise = global.Promise;
 
 app.use(flash());
