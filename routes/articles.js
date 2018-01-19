@@ -86,30 +86,40 @@ router.get("/articles/:id" , function(req, res){
 // });
 
 router.get("/articles/:id/edit", middleware.chkAuth, function(req, res){
-    //find the campground with provided ID
     mainDbs.findById(req.params.id, function(err, foundArticles){
         if(err){
             console.log(err);
         } else {
-            //render show template with that campground
             res.render("articles/edit", {article: foundArticles});
         }
     });
 });
 
 
-router.put("/articles/:id", middleware.chkAuth, function(req, res){
-    // find and update the correct campground
-    mainDbs.findByIdAndUpdate(req.params.id, req.body.article, function(err, updatedArticles){
-       if(err){
-           res.redirect("/articles");
-       } else {
-           //redirect somewhere(show page)
-           res.redirect("/articles/" + req.params.id);
-       }
+// router.put("/articles/:id", middleware.chkAuth, function(req, res){
+//     // find and update the correct campground
+//     mainDbs.findByIdAndUpdate(req.params.id, req.body.article, function(err, updatedArticles){
+//       if(err){
+//           res.redirect("/articles");
+//       } else {
+//           //redirect somewhere(show page)
+//           res.redirect("/articles/" + req.params.id);
+//       }
+//     });
+// });
+
+router.put("/:id", function(req, res){
+    var newData = {name: req.body.name, image: req.body.image, descriptions: req.body.descriptions};
+    mainDbs.findByIdAndUpdate(req.params.id, {$set: newData}, function(err, article){
+        if(err){
+            req.flash("error", err.message);
+            res.redirect("back");
+        } else {
+            req.flash("success","Successfully Updated!");
+            res.redirect("/articles/" + article._id);
+        }
     });
 });
-
 
 router.delete("/articles/:id", middleware.chkAuth, function(req, res){
    mainDbs.findByIdAndRemove(req.params.id, function(err){
