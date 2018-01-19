@@ -79,9 +79,21 @@ router.get("/articles/:id" , function(req, res){
     });
 });
 
+// router.get("/articles/:id/edit", middleware.chkAuth, function(req, res){
+//     mainDbs.findById(req.params.id, function(err, foundArticles){
+//         res.render("articles/edit", {article: foundArticles});
+//     });
+// });
+
 router.get("/articles/:id/edit", middleware.chkAuth, function(req, res){
+    //find the campground with provided ID
     mainDbs.findById(req.params.id, function(err, foundArticles){
-        res.render("articles/edit", {article: foundArticles});
+        if(err){
+            console.log(err);
+        } else {
+            //render show template with that campground
+            res.render("articles/edit", {campground: foundArticles});
+        }
     });
 });
 
