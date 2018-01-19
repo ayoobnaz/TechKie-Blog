@@ -22,7 +22,7 @@ var articleRT = require("./routes/articles");
 var indexRT = require("./routes/index");
 
 // mongoose.connect('mongodb://localhost/maindbs', { useMongoClient: true });
-mongoose.connect("mongodb://ayoob:123456@ds031591.mlab.com:31591/ayoobnaz");
+mongoose.connect("mongodb://ar:123@ds031591.mlab.com:31591/ayoobnaz");
 
 mongoose.Promise = global.Promise;
 
