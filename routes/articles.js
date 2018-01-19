@@ -24,9 +24,9 @@ var upload = multer({ storage: storage, fileFilter: imageFilter})
 
 var cloudinary = require('cloudinary');
 cloudinary.config({ 
-  cloud_name: process.env.DB_HOST ,
-  api_key: process.env.DB_USER ,
-  api_secret: process.env.DB_PASS
+  cloud_name: process.env.DB_HOST1 ,
+  api_key: process.env.DB_USER1 ,
+  api_secret: process.env.DB_PASS1
 });
 
 
