@@ -15,14 +15,13 @@ var mainDbs = require("./models/articles");
 var Comment = require("./models/comments");
 var flash = require('connect-flash');
 var multer = require('multer');
-var dotenv = require('dotenv')
 
 
 var commentRT = require("./routes/comments");
 var articleRT = require("./routes/articles");
 var indexRT = require("./routes/index");
 
-
+// mongoose.connect('mongodb://localhost/maindbs', { useMongoClient: true });
 mongoose.connect('mongodb://arData:thahani@ds031591.mlab.com:31591/ayoobnaz');
 mongoose.Promise = global.Promise;
 
