@@ -92,7 +92,7 @@ router.get("/articles/:id/edit", middleware.chkAuth, function(req, res){
             console.log(err);
         } else {
             //render show template with that campground
-            res.render("articles/edit", {campground: foundArticles});
+            res.render("articles/edit", {article: foundArticles});
         }
     });
 });
