@@ -108,7 +108,7 @@ router.get("/articles/:id/edit", middleware.chkAuth, function(req, res){
 //     });
 // });
 
-router.put("/:id", function(req, res){
+router.put("/articles/:id", function(req, res){
     var newData = {name: req.body.name, image: req.body.image, descriptions: req.body.descriptions};
     mainDbs.findByIdAndUpdate(req.params.id, {$set: newData}, function(err, article){
         if(err){
