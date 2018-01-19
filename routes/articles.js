@@ -2,12 +2,10 @@ var express = require("express");
 var router = express.Router();
 var middleware = require("../middleware");
 var request = require("request");
+
 var multer = require('multer');
-
-
 var mainDbs = require("../models/articles");
 var Comment = require("../models/comments");
-
 
 
 var storage = multer.diskStorage({
@@ -15,7 +13,6 @@ var storage = multer.diskStorage({
     callback(null, Date.now() + file.originalname);
   }
 });
-
 var imageFilter = function (req, file, cb) {
     // accept image files only
     if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
@@ -27,9 +24,9 @@ var upload = multer({ storage: storage, fileFilter: imageFilter})
 
 var cloudinary = require('cloudinary');
 cloudinary.config({ 
-  cloud_name: process.env.DB_HOST ,
-  api_key: process.env.DB_USER ,
-  api_secret: process.env.DB_PASS
+  cloud_name: "dnrwf933z" ,
+  api_key: "416373789358333" ,
+  api_secret: "LPVzhlDNyIi1LOPgMIod9U5hfQE"
 });
 
 
@@ -50,8 +47,7 @@ router.get("/articles" , function(req, res){
 
 router.post("/articles" , middleware.IsLoggedIn, upload.single('image'), function(req, res){
 
-  cloudinary.uploader.upload(req.file.path, function(result) {
-  // add cloudinary url for the image to the campground object under image property
+cloudinary.uploader.upload(req.file.path, function(result) {
   req.body.article.image = result.secure_url;
   req.body.article.author = {
     id: req.user._id,

@@ -9,20 +9,21 @@
 						<h3><%= article.name %></h3>
 					</div>
 					<div class="about-two">
-						<img src="<%= article.image %>" alt="" />
+						<img src="<%= article.image %>" />
 						<p>Posted by <a href="#"><%= article.author.username %></a> On <%= article.dateN.toDateString() %></p>
 						<p><%= article.descriptions %></p><br/>
 						    <% if(currUser && article.author.id.equals(currUser._id)){ %>
-						    						<div class="comentBrdr">
+						   <div class="comentBrdr">
 
 						    <p>Modify Your Post:</p>
 
-						     <button class="editBtn"><a id="editcolor" href="/articles/<%= article._id %>/edit">Edit</a></button>
 
 							<form class="delete-form" action="/articles/<%= article._id %>?_method=DELETE" method="POST">
+							  <button class="editBtn"><a id="editcolor" href="/articles/<%= article._id %>/edit">Edit</a></button>
+
 							    <button class="editBtn">Delete</button>
                             </form>
-                             <% }%>
+                             <% } %>
                         </div>
                              
                              
