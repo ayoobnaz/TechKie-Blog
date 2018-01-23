@@ -21,9 +21,9 @@ var commentRT = require("./routes/comments");
 var articleRT = require("./routes/articles");
 var indexRT = require("./routes/index");
 
-// mongoose.connect('mongodb://localhost/maindbs', { useMongoClient: true });
-mongoose.connect("mongodb://ar:123@ds031591.mlab.com:31591/ayoobnaz");
-
+mongoose.connect('mongodb://localhost/maindbs', { useMongoClient: true });
+// mongoose.connect("mongodb://ar:123@ds031591.mlab.com:31591/ayoobnaz");
+console.log(process.env.DATABASEURL);
 mongoose.Promise = global.Promise;
 
 app.use(flash());

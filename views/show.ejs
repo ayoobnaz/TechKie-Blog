@@ -17,9 +17,10 @@
 
 						    <p>Modify Your Post:</p>
 
-							  <button class="editBtn"><a id="editcolor" href="/articles/<%= article._id %>/edit">Edit</a></button>
 
 							<form class="delete-form" action="/articles/<%= article._id %>?_method=DELETE" method="POST">
+							    <a class="editBtn" id="editcolor" href="/articles/<%= article._id %>/edit">Edit</a>
+
 							    <button class="editBtn">Delete</button>
                             </form>
                              <% } %>

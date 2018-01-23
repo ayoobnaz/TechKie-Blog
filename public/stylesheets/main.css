@@ -1,3 +1,6 @@
+html, body {
+    height: 100%;
+}
 
 
 .delete-form{
@@ -138,3 +141,48 @@ transition: 0.5s all;
 .custom-span{ font-family: Arial; font-weight: bold;font-size: 100px; color: #e3e6e8}
 #uploadFile{border: none;margin-left: 10px; width: 200px;}
 .custom-para{font-family: arial;font-weight: bold;font-size: 24px; color:#585858;}
+
+
+
+
+
+/************************************************************
+*************************Footer******************************
+*************************************************************/
+
+.footerp p {font-family: 'Gudea', sans-serif; }
+
+
+.footer-bottom {
+    background-color: #15224f;
+    /*min-height: 30px;*/
+    margin-top: 90px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    top: 15%;
+    width: 100%;
+
+}
+.copyright {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+}
+.design {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+    text-align: right;
+}
+.design a {
+    color: #fff;
+}
+
+
+
+/************************************************************
+*************************Footer******************************
+*************************************************************/
