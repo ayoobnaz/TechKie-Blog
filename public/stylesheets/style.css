@@ -1440,8 +1440,29 @@ ul.navig li a {
     padding: 1em 0;
 }
 }
-
-
+@media (max-width:736px){
+.header-right ul {
+    right: 31.7%;
+}	
+.welcome-bottom img {
+    width: 100%;
+}
+.abt-left h6 {
+    width: 30.5%;
+}
+}
+@media (max-width:667px){
+.header-right ul {
+    right: 35.7%;
+}
+.abt-left h6 {
+    width: 32.5%;
+}
+}
+@media (max-width:640px){
+.header-top {
+    padding: 1.3em 0px;
+}
 .comment-bottom input[type="text"], .comment-bottom textarea {
     padding: 11px 10px;
     font-size: 13px;
@@ -1544,8 +1565,27 @@ ul.navig {
 .label {
     font-size: 54%;
 }
-
-
+}
+@media (max-width:600px){
+.header-right ul {
+    right: 33.7%;
+}
+.abt-left h6 {
+    width: 37.5%;
+}
+}
+@media (max-width:568px){
+.about-one p {
+    width: 17.5%;
+}	
+.abt-left h6 {
+    width: 40.5%;
+}
+}
+@media (max-width:480px){
+ul.navig {
+    top: 160%;
+}
 span.menu {
     margin: -4px 0px 0 0;
 }
