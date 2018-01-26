@@ -6,7 +6,7 @@
         <h3 style="text-align:left">Add New Comments</h3>
         <div>
             <form action="/articles/<%= article._id %>/comments" method="POST">
-            <textarea cols="77" rows="6" name="comment[text]"></textarea>
+            <textarea class="col-xs-12" cols="77" rows="6" name="comment[text]" required></textarea>
 
             <div class="form-group edBtn"><button class="comEdit subEdit" type="submit">Submit</button></div>
             </form>
@@ -16,4 +16,3 @@
 </div>
 
 
-<% include partials/footer %>
