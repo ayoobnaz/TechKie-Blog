@@ -169,6 +169,7 @@ transition: 0.5s all;
     line-height: 30px;
     min-height: 30px;
     padding: 7px 0;
+    text-align: center;
 }
 .design {
     color: #fff;
@@ -182,6 +183,58 @@ transition: 0.5s all;
 }
 
 
+/******header****************/
+
+#mn{
+background-color: #00547E;
+border-bottom: 4px solid #04A3ED;
+width:100%;
+height: auto;
+padding: 0 10px;
+position: relative;
+margin: 0px;
+z-index: 1;
+opacity: 0.9;
+}
+
+
+.menu  .navbar-nav >  li >  a
+{
+font-size: 13px;
+color: white;
+padding: 10px 35px;
+
+}
+
+li #logSign {
+font-size: 13px;
+color: white;
+padding: 10px 35px;
+
+} 
+
+
+
+.menu  .navbar-nav >  li >  a:hover
+{
+background-color: #04A3ED;
+}
+
+.navbar-header > a
+{
+font-family: 'Ubuntu Condensed', sans-serif;
+padding: 0px;
+margin: 0px;
+text-decoration: none;
+color: white;
+font-size: 25px;
+padding: 5px 30px;
+}
+.navbar-header > a:hover
+{
+text-decoration: none;
+color: #04A3ED;
+}
 
 /************************************************************
 *************************Footer******************************

@@ -37,14 +37,13 @@
                         <span class=" pull-right"><i class="glyphicon glyphicon-time"></i><%= comment.created.toDateString() %></span>
                         <p>
                          <%= comment.text %>
-                        </p> 
+                        </p>
                         <% if(currUser && comment.author.id.equals(currUser._id)){ %>
-                        <a class="comEdit" href="/articles/<%=article._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                        <a class="editBtn" href="/articles/<%=article._id %>/comments/<%=comment._id %>/edit">Edit</a>
                             <form class="delete-form" action="/articles/<%=article._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
-                                <input type="submit" class="comEdit" value="Delete">
+                                <input type="submit" class="editBtn" value="Delete">
                         </form>
                         <% } %> <hr />
-
                     </div>
                     
                 </div>

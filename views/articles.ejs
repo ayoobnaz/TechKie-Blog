@@ -27,9 +27,8 @@
 							           <% articles.forEach(function(article){ %>
 
 							<div class="col-md-6 abt-left" id="abt-left">
-								<h3><%= article.name %></h3>
 								<img src="<%= article.image %>">
-								<p style="width: 70ch; overflow: hidden; white-space: nowrap;"><%= article.descriptions %></p>
+								<h3><%= article.name %></h3>
 								<div class="about-btn">
 									<label><%= article.dateN.toDateString() %></label>
 									<a href="/articles/<%= article.id %>">Read More</a>

@@ -25,24 +25,47 @@
 	<div class="header">
 	    
 	    
-		<div class="container-fluid">
-			<div class="head">
-			<div class="navigation">
-				<ul class="navig">
-				        <li id="home"><a href="/articles"  class="active">Home</a></li>
-        				<% if (!currUser){ %>
-                        <li class="pull-right"><a href="/login">Login</a></li>
-                        <li class="pull-right"><a href="/register">SignUp</a></li>
-                        <% } else { %>
-                        <li class="pull-right"><a href="#">Signed in as <%= currUser.username %></a></li>
-                        <li class="pull-right"><a href="/logout">Logout</a></li>
-                        <% } %> 
+		<!--<div class="container-fluid">-->
+			<!--<div class="head">-->
+			<!--<div class="navigation">-->
+			<!--	<ul class="navig">-->
+			<!--	        <li id="home"><a href="/articles"  class="active">Home</a></li>-->
+   <!--     				<% if (!currUser){ %>-->
+   <!--                     <li class="pull-right"><a href="/login">Login</a></li>-->
+   <!--                     <li class="pull-right"><a href="/register">SignUp</a></li>-->
+   <!--                     <% } else { %>-->
+   <!--                     <li class="pull-right"><a href="#">Signed in as <%= currUser.username %></a></li>-->
+   <!--                     <li class="pull-right"><a href="/logout">Logout</a></li>-->
+   <!--                     <% } %> -->
 
-				</ul>
-			</div>
+			<!--	</ul>-->
+			<!--</div>-->
 
-			</div>
-			</div>
+			<!--</div>-->
+<div class="menu" id="mn">
+    <div class="container-fluid">
+        		<div class="navbar-header">
+			<a href="/articles">Home</a>
+		</div>
+    	<div>
+    	 				<% if (!currUser){ %>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<li><a href="/register" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				<% } else { %>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="logSign"><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+				<li id="logSign"><a href="#"><span class="glyphicon glyphicon-new-window"></span> Signed in as <%= currUser.username %></a></li>
+                <% } %>
+            </ul>
+
+		</div>
+	</div>
+</div>
+
+			<!--</div>-->
 		</div>	    
     
 
