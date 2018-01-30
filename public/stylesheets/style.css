@@ -1,16 +1,9 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+
 @font-face {
-    font-family: 'RobotoSlab-Regular';
-    src:url(../fonts/RobotoSlab-Regular.ttf) format('truetype');
+    font-family: 'Roboto', sans-serif;
 }
 @font-face {
-    font-family: 'Raleway-Regular';
-    src:url(../fonts/Raleway-Regular.ttf) format('truetype');
+    font-family: 'Roboto', sans-serif;
 }
 html, body{
     font-size: 100%;
@@ -18,7 +11,7 @@ html, body{
 }
 body {
 	font-size: 100%;
-	font-family: 'RobotoSlab-Regular';
+	font-family: 'Roboto', sans-serif;;
 }
 body a{
 	transition: 0.5s all ease;
@@ -321,7 +314,7 @@ ul.navig {
 }
 .about-two p{
 	font-size:14px;
-	font-family: 'Raleway-Regular';
+	font-family: 'Roboto', sans-serif;
 	color:#999;
 	line-height:1.8em;
 	margin-top:2%;
