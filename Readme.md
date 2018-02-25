@@ -1,1 +1,1 @@
-A Blog App with NodeServer, Mongo DB.
+A Blog App with a NodeJS backend, Mongo DB.
